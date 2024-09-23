@@ -11,7 +11,11 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.13"
+    "next": "13.2.3",
+    "next-auth": "^4.20.1",
+    "@next-auth/mongodb-adapter": "^1.1.1",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
