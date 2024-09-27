@@ -1,10 +1,10 @@
 import multiparty from "multiparty";
-//import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import fs from "fs";
 import mime from "mime-types";
 import { mongooseConnect } from "@/lib/mongoose";
 import { isAdminRequest } from "@/pages/api/auth/[...nextauth]";
-const bucketName = "Blink-shop";
+const bucketName = "blink-shop";
 
 export default async function handle(req, res) {
   await mongooseConnect();
@@ -19,7 +19,7 @@ export default async function handle(req, res) {
   });
   console.log("length:", files.file.length);
   const client = new S3Client({
-    region: "us-east-1",
+    region: "eu-north-1",
     credentials: {
       accessKeyId: process.env.S3_ACCESS_KEY,
       secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
