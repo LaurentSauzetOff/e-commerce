@@ -53,8 +53,8 @@ function Categories({ swal }) {
   function deleteCategory(category) {
     swal
       .fire({
-        title: "Are you sure?",
-        text: `Do you want to delete ${category.name}?`,
+        title: "Etes-vous sûr ?",
+        text: `Voulez-vous effacer ${category.name} ?`,
         showCancelButton: true,
         cancelButtonText: "Cancel",
         confirmButtonText: "Yes, Delete!",
@@ -97,11 +97,11 @@ function Categories({ swal }) {
   }
   return (
     <Layout>
-      <h1>Categories</h1>
+      <h1>Catégories</h1>
       <label>
         {editedCategory
-          ? `Edit category ${editedCategory.name}`
-          : "Create new category"}
+          ? `Modifier catégorie ${editedCategory.name}`
+          : "Créer nouvelle catégorie"}
       </label>
       <form onSubmit={saveCategory}>
         <div className="flex gap-1">
@@ -115,7 +115,7 @@ function Categories({ swal }) {
             onChange={(ev) => setParentCategory(ev.target.value)}
             value={parentCategory}
           >
-            <option value="">No parent category</option>
+            <option value="">Pas de catégorie parent</option>
             {categories.length > 0 &&
               categories.map((category) => (
                 <option key={category._id} value={category._id}>
@@ -125,13 +125,13 @@ function Categories({ swal }) {
           </select>
         </div>
         <div className="mb-2">
-          <label className="block">Properties</label>
+          <label className="block">Propriétés</label>
           <button
             onClick={addProperty}
             type="button"
             className="btn-default text-sm mb-2"
           >
-            Add new property
+            Ajouter nouvelle propriété
           </button>
           {properties.length > 0 &&
             properties.map((property, index) => (
@@ -159,7 +159,7 @@ function Categories({ swal }) {
                   type="button"
                   className="btn-red"
                 >
-                  Remove
+                  Enlever
                 </button>
               </div>
             ))}
@@ -176,11 +176,11 @@ function Categories({ swal }) {
               }}
               className="btn-default"
             >
-              Cancel
+              Annuler
             </button>
           )}
           <button type="submit" className="btn-primary py-1">
-            Save
+            Sauvegarder
           </button>
         </div>
       </form>
@@ -188,8 +188,8 @@ function Categories({ swal }) {
         <table className="basic mt-4">
           <thead>
             <tr>
-              <td>Category name</td>
-              <td>Parent category</td>
+              <td>Nom de la catégorie</td>
+              <td>Catégorie parent</td>
               <td></td>
             </tr>
           </thead>
@@ -204,13 +204,13 @@ function Categories({ swal }) {
                       onClick={() => editCategory(category)}
                       className="btn-default mr-1"
                     >
-                      Edit
+                      Modifier
                     </button>
                     <button
                       onClick={() => deleteCategory(category)}
                       className="btn-red"
                     >
-                      Delete
+                      Supprimer
                     </button>
                   </td>
                 </tr>
