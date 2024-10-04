@@ -10,7 +10,7 @@ export default function Layout({ children }) {
   const { data: session } = useSession();
   if (!session) {
     return (
-      <div className="bg-bgGray w-screen h-screen flex items-center">
+      <div className="bg-gray-200 w-screen h-screen flex items-center">
         <div className="text-center w-full">
           <button
             onClick={() => signIn("google")}
@@ -24,7 +24,7 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div className="bg-bgGray min-h-screen ">
+    <div className="bg-blue-900 min-h-screen ">
       <div className="block md:hidden flex items-center p-4">
         <button onClick={() => setShowNav(true)}>
           <svg
